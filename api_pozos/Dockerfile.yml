@@ -1,0 +1,18 @@
+# Base image 
+FROM python:2.7-stretch
+
+# Copy the source code of the API in the container at the root "/" path
+COPY student_age.py /
+
+# Install the required packages
+RUN apt-get update -y && apt-get install python-dev python3-dev libsasl2-dev python-dev libldap2-dev libssl-dev -y
+RUN pip install flask==1.1.2 flask_httpauth==4.1.0 flask_simpleldap python-dotenv==0.14.0
+
+# Declare the data folder as a volume
+VOLUME ["/data"]
+
+# Expose the port 5000
+EXPOSE 5000
+
+# When container start, it must run the student_age.py
+CMD ["python", "student_age.py"]

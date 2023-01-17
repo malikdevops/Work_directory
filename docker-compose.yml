@@ -1,0 +1,25 @@
+version: '3'
+services:
+  website:
+    image: php:apache
+    environment:
+      - USERNAME=${USERNAME}
+      - PASSWORD=${PASSWORD}
+    volumes:
+      - ./website:/var/www/html
+    depends_on:
+      - API
+    ports:
+      - "8082:80"
+    networks:
+      - pozos_network
+  API:
+    image: api-pozos:1
+    volumes:
+      - ./student_age.json:/data/student_age.json
+    ports:
+      - "${PORT}:5000"
+    networks:
+      - pozos_network
+networks:
+  pozos_network:
