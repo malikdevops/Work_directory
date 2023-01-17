@@ -18,7 +18,7 @@ services:
     volumes:
       - ./student_age.json:/data/student_age.json
     ports:
-      - "${PORT}:5000"
+      - "8081:5000"
     networks:
       - pozos_network
 networks:
