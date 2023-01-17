@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file api_pozos/Dockerfile --tag api-pozos:latest
+      run: docker build . --file api_pozos/Dockerfile.yml --tag api-pozos:latest
