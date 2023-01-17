@@ -2,7 +2,7 @@
 FROM python:2.7-stretch
 
 # Copy the source code of the API in the container at the root "/" path
-COPY student_age.py /
+COPY api_pozos/student_age.py /
 
 # Install the required packages
 RUN apt-get update -y && apt-get install python-dev python3-dev libsasl2-dev python-dev libldap2-dev libssl-dev -y
