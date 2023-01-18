@@ -27,7 +27,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Push the Docker image
-      run: docker push api-pozos:latest
+      run: docker push malikdevops97/api-pozos:latest
       
   
   
