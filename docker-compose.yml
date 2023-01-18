@@ -14,7 +14,7 @@ services:
     networks:
       - pozos_network
   API:
-    image: api-pozos:1
+    image: api-pozos:latest
     volumes:
       - ./student_age.json:/data/student_age.json
     ports:
