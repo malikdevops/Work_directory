@@ -28,8 +28,8 @@ jobs:
 
     - name: Push the Docker image
       run: |
-        docker tag api-pozos malikdevops97/api-pozos:latest
-        docker push malikdevops97/api-pozos:latest
+        docker tag api-pozos ${{ secrets.DOCKER_USERNAME }}/api-pozos:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}/api-pozos:latest
 
       
   
